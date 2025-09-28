@@ -1,2 +1,24 @@
 res://scripts/game.gd
 res://scenes/game.tscn
+res://scenes/health.tscn
+res://scenes/inventory.tscn
+res://scripts/start scene.gd
+res://scenes/rules_page.tscn
+res://scenes/rules.gd
+res://scenes/main_menu(final).tscn
+res://scenes/restart.gd
+res://scenes/game_over.tscn
+res://scenes/game win.tscn
+res://scenes/positioning.gd
+res://scripts/healthbar.gd
+res://scripts/inventory.gd
+res://scenes/player.tscn
+res://scripts/player.gd
+res://scripts/flask.gd
+res://scenes/bluedropper.tscn
+res://scenes/bannedflask1.tscn
+res://scripts/bannedscript.gd
+res://scenes/bannedflask2.tscn
+res://scenes/bannedjar.tscn
+res://scenes/blueflask.tscn
+res://scenes/zombie.tscn

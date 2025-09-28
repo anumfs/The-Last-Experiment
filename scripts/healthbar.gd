@@ -1,8 +1,9 @@
 extends Control
 
-@onready var heart1 = $HBoxContainer/Heart1
-@onready var heart2 = $HBoxContainer/Heart2
-@onready var heart3 = $HBoxContainer/Heart3
+@onready var heart1: Sprite2D = $HBoxContainer/Sprite2D
+@onready var heart2: Sprite2D = $HBoxContainer/Sprite2D2
+@onready var heart3: Sprite2D = $HBoxContainer/Sprite2D3
+
 
 var hearts = []
 

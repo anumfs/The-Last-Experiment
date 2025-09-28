@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl2mfoycn7der"]
+[gd_scene load_steps=10 format=3 uid="uid://cx1llqi24uofy"]
 
-[ext_resource type="Script" uid="uid://chyedqweegb6c" path="res://main_menu.gd" id="1_wmwfl"]
-[ext_resource type="Texture2D" uid="uid://bspw6dfpcje7s" path="res://assets/yay.jpg" id="2_8wjr8"]
-[ext_resource type="FontFile" uid="uid://bnm4wul3gumgb" path="res://assets/fonts/PixelOperator8.ttf" id="3_0crtv"]
-[ext_resource type="FontFile" uid="uid://7nj5ithl3q0e" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_k5kuo"]
+[ext_resource type="Script" uid="uid://c3c8vewoe6def" path="res://scripts/start scene.gd" id="1_wndox"]
+[ext_resource type="Texture2D" uid="uid://bn7x8733p1wo" path="res://assets/backgrounds/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg" id="2_rg8st"]
+[ext_resource type="FontFile" uid="uid://yqlctr5f6rhk" path="res://assets/fonts/PixelOperator8.ttf" id="3_0crtv"]
+[ext_resource type="FontFile" uid="uid://bktrgqcceimil" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_k5kuo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iohc1"]
-texture = ExtResource("2_8wjr8")
+texture = ExtResource("2_rg8st")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep83s"]
 bg_color = Color(1, 1, 1, 1)
@@ -44,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wmwfl")
+script = ExtResource("1_wndox")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

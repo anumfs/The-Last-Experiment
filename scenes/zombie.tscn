@@ -1,39 +1,35 @@
-[gd_scene load_steps=16 format=3 uid="uid://bm2k1fqrfnhmr"]
+[gd_scene load_steps=15 format=3 uid="uid://bm2k1fqrfnhmr"]
 
-[ext_resource type="Script" uid="uid://ogpyg65v3b32" path="res://scripts/zombie.gd" id="1_4gx57"]
-[ext_resource type="Texture2D" uid="uid://nd1t6ores4nj" path="res://assets/sprites/enemies/zombie_attack.png" id="1_xepks"]
-[ext_resource type="Texture2D" uid="uid://dx8l3dtgfvl5c" path="res://assets/sprites/enemies/zombie_run.png" id="2_4gx57"]
+[ext_resource type="Script" path="res://scripts/zombie.gd" id="1_4gx57"]
+[ext_resource type="Texture2D" uid="uid://bcye2osbs5e6f" path="res://assets/sprites/enemies/chonker_attack.png" id="2_xepks"]
 [ext_resource type="PackedScene" uid="uid://bk6qhv3lvkbxa" path="res://scenes/killzone.tscn" id="3_ycv6i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjjxt"]
 radius = 4.57366
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjjxt"]
-atlas = ExtResource("1_xepks")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7pfmu"]
-atlas = ExtResource("1_xepks")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aetfh"]
-atlas = ExtResource("1_xepks")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jjlcg"]
-atlas = ExtResource("2_4gx57")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gx57"]
+atlas = ExtResource("2_xepks")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iblsu"]
-atlas = ExtResource("2_4gx57")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv6i"]
+atlas = ExtResource("2_xepks")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ida1p"]
-atlas = ExtResource("2_4gx57")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fthk"]
+atlas = ExtResource("2_xepks")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6hpf"]
-atlas = ExtResource("2_4gx57")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjlcg"]
+atlas = ExtResource("2_xepks")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eskk2"]
@@ -54,16 +50,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4gx57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fthk")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jjlcg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iblsu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ida1p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u6hpf")
 }],
 "loop": true,
 "name": &"run",
@@ -91,6 +87,7 @@ animation = &"run"
 autoplay = "run"
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("3_ycv6i")]
+script = null
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
 z_index = 1

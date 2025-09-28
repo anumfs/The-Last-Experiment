@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2li5t8nqs7gy"]
+[gd_scene load_steps=9 format=3 uid="uid://ctydg27fg4hmj"]
 
-[ext_resource type="Texture2D" uid="uid://dbkcaumgnobnp" path="res://yay.jpg" id="1_dab2g"]
-[ext_resource type="FontFile" uid="uid://ci1shm5o4rqpb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_oa7jd"]
+[ext_resource type="Script" uid="uid://cvnf1yl5cfwhy" path="res://scripts/restart.gd" id="1_8rxel"]
+[ext_resource type="Texture2D" uid="uid://bn7x8733p1wo" path="res://assets/backgrounds/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg" id="2_km5o2"]
+[ext_resource type="FontFile" uid="uid://bktrgqcceimil" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_oa7jd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l17l7"]
-texture = ExtResource("1_dab2g")
+texture = ExtResource("2_km5o2")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwy64"]
 bg_color = Color(1, 1, 1, 1)
@@ -42,6 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8rxel")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -60,9 +62,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.5
-offset_top = 27.0
+offset_top = 50.0
 offset_right = 65.5
-offset_bottom = 71.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -90,10 +92,11 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 8
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("2_oa7jd")
 theme_override_font_sizes/font_size = 32
-text = "Congartulations!
+text = "Congratulations!
 You have managed to create 
 the vaccine "
 horizontal_alignment = 1

@@ -1,8 +1,8 @@
 extends Control
 
-@onready var c_label = $VBoxContainer/CLabel
-@onready var f_label = $VBoxContainer/FLabel
-@onready var g_label = $VBoxContainer/GLabel
+@onready var f_label: Label = $VBoxContainer/Sprite2D2
+@onready var c_label: Label = $VBoxContainer/Sprite2D
+@onready var g_label: Label = $VBoxContainer/Sprite2D3
 
 func _ready():
 	# Connect to game manager

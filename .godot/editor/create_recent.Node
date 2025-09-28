@@ -1,0 +1,8 @@
+Panel
+Sprite2D
+Camera2D
+Label
+VBoxContainer
+HBoxContainer
+Control
+CanvasLayer

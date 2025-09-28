@@ -1,61 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy5d558emhasj"]
+[gd_scene load_steps=2 format=3 uid="uid://dy5d558emhasj"]
 
 [ext_resource type="Script" uid="uid://ckptymrt888n2" path="res://scripts/inventory.gd" id="1_qw0r6"]
-[ext_resource type="Texture2D" uid="uid://u6be3i7wh6xd" path="res://assets/objects/Flasks 32x32.png" id="2_hj2ta"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hj2ta"]
-radius = 2.1965647
-height = 15.926512
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ty45s"]
-radius = 9.0
-height = 38.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53g1v"]
-radius = 14.0
-height = 48.0
-
-[node name="inventory" type="Node2D"]
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_qw0r6")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
-position = Vector2(-53, 1)
-scale = Vector2(2, 2)
-texture = ExtResource("2_hj2ta")
-region_enabled = true
-region_rect = Rect2(222.43721, 160.2423, 30.809769, 31.512436)
+[node name="Sprite2D2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-49, 0)
-rotation = -0.85346603
-scale = Vector2(3, 3)
-shape = SubResource("CapsuleShape2D_hj2ta")
+[node name="Sprite2D" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
-position = Vector2(-1, 0)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_hj2ta")
-region_enabled = true
-region_rect = Rect2(1.1962891, 159.76822, 27.720886, 33.456253)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_ty45s")
-
-[node name="Area2D3" type="Area2D" parent="."]
-position = Vector2(3, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
-position = Vector2(50, -2)
-scale = Vector2(2, 2)
-texture = ExtResource("2_hj2ta")
-region_enabled = true
-region_rect = Rect2(132.73969, 128.71034, 24.83992, 32.701584)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(48, -4)
-shape = SubResource("CapsuleShape2D_53g1v")
+[node name="Sprite2D3" type="Label" parent="VBoxContainer"]
+layout_mode = 2

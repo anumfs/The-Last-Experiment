@@ -35,7 +35,17 @@ func _ready():
 	current_health = max_health
 	
 	# Connect all flask and banned item signals
+	print("=== GAME MANAGER STARTING ===")
 	connect_all_objects()
+	
+	# Debug: Check what's in the scene
+	var all_flasks = get_tree().get_nodes_in_group("flasks")
+	print("Total flasks found: ", all_flasks.size())
+	for flask in all_flasks:
+		if flask.has_method("get") and flask.get("flask_type"):
+			print("Flask found: ", flask.flask_type, " at ", flask.position)
+		else:
+			print("Flask found but no flask_type property")
 
 func connect_all_objects():
 	# Connect regular flasks (A, B, C, D, E, F, G)
@@ -59,12 +69,19 @@ func connect_flask_type(flask_type: String):
 	if flask_nodes.is_empty():
 		# Fallback: try generic "flasks" group
 		flask_nodes = get_tree().get_nodes_in_group("flasks")
-		flask_nodes = flask_nodes.filter(func(node): return node.flask_type == flask_type)
+		flask_nodes = flask_nodes.filter(func(node): return node.has_method("get") and node.get("flask_type") == flask_type)
+	
+	print("Looking for flask type: ", flask_type, " - Found: ", flask_nodes.size(), " instances")
 	
 	for flask in flask_nodes:
-		if flask.has_signal("flask_touched") and not flask.flask_touched.is_connected(_on_flask_touched):
-			flask.flask_touched.connect(_on_flask_touched)
-			print("Connected flask: ", flask_type)
+		if flask.has_signal("flask_touched"):
+			if not flask.flask_touched.is_connected(_on_flask_touched):
+				flask.flask_touched.connect(_on_flask_touched)
+				print("✅ Connected flask: ", flask_type)
+			else:
+				print("⚠ Flask already connected: ", flask_type)
+		else:
+			print("❌ Flask missing 'flask_touched' signal: ", flask_type)
 
 func connect_banned_type(banned_type: String):
 	# Find all instances of this banned type
@@ -225,12 +242,19 @@ func block_other_flasks(recipe_ingredients: Array):
 func spawn_result(result_type: String):
 	print("Spawning ", result_type)
 	
-	# Load the appropriate flask scene
-	var flask_scene_path = "res://Flask" + result_type + ".tscn"
+	# Map your actual scene file names
+	var scene_mapping = {
+		"C": "res://scenes/greenfinaltube.tscn",  # Based on your scene file
+		"F": "res://scenes/bluefinalflask.tscn",  # Based on your scene file  
+		"G": "res://scenes/redfinalflask.tscn"    # Based on your scene file
+	}
+	
+	var flask_scene_path = scene_mapping.get(result_type, "res://scenes/" + result_type.to_lower() + "flask.tscn")
 	var flask_scene = load(flask_scene_path)
 	
 	if flask_scene == null:
 		print("Error: Could not load ", flask_scene_path)
+		print("Available scenes should be: ", scene_mapping)
 		return
 	
 	# Create new flask instance
@@ -244,6 +268,9 @@ func spawn_result(result_type: String):
 	# Connect the signal
 	if new_flask.has_signal("flask_touched"):
 		new_flask.flask_touched.connect(_on_flask_touched)
+		print("✅ Connected spawned flask: ", result_type)
+	else:
+		print("❌ Spawned flask missing signal: ", result_type)
 	
 	# Visual spawn effect
 	new_flask.scale = Vector2.ZERO

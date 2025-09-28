@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw7hymawjb2kr"]
+[gd_scene load_steps=9 format=3 uid="uid://b7k3mnl8whhi5"]
 
-[ext_resource type="Script" uid="uid://cuaeqxoqf0utb" path="res://rules_page.gd" id="1_4v2id"]
-[ext_resource type="Texture2D" uid="uid://jp52ay6crdk4" path="res://Rules.png" id="2_wcdk0"]
-[ext_resource type="FontFile" uid="uid://dplx2f5nh8wa8" path="res://assets/fonts/PixelOperator8.ttf" id="3_4hfty"]
+[ext_resource type="Script" uid="uid://dq7y82luke3a6" path="res://scripts/rules.gd" id="1_n2emh"]
+[ext_resource type="Texture2D" uid="uid://bod50vvmo0dcb" path="res://Rules.png" id="2_wcdk0"]
+[ext_resource type="FontFile" uid="uid://yqlctr5f6rhk" path="res://assets/fonts/PixelOperator8.ttf" id="3_4hfty"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gp1lp"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jt76"]
 texture = ExtResource("2_wcdk0")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2mxm"]
@@ -46,7 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4v2id")
+script = ExtResource("1_n2emh")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -55,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_gp1lp")
+theme_override_styles/panel = SubResource("StyleBoxTexture_6jt76")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
