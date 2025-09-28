@@ -56,7 +56,7 @@ height = 320.0
 size = Vector2(457.5, 59.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
-size = Vector2(212.5, 164.5)
+size = Vector2(261.125, 38.5625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
 size = Vector2(102.5, 235)
@@ -148,69 +148,60 @@ position = Vector2(-1122, 547)
 rotation = 0.64751714
 collision_layer = 4
 collision_mask = 0
-script = null
 
 [node name="A" parent="Collectibles" instance=ExtResource("5_u5sy4")]
 position = Vector2(-451, -204)
 collision_layer = 4
 collision_mask = 0
-script = null
 
 [node name="B" parent="Collectibles" instance=ExtResource("6_gee14")]
 position = Vector2(-1454, -381)
 rotation = 0.22863813
 scale = Vector2(0.49999997, 0.49999997)
-script = null
 
 [node name="C" parent="Collectibles" instance=ExtResource("7_0tnpc")]
 position = Vector2(-160.99998, -178.99998)
 rotation = 0.86219263
 scale = Vector2(0.7, 0.7)
-script = null
 
 [node name="D" parent="Collectibles" instance=ExtResource("8_kvpfn")]
 position = Vector2(153, -512)
-script = null
 
 [node name="F" parent="Collectibles" instance=ExtResource("10_kvuet")]
 position = Vector2(-185, -458)
-script = null
 
 [node name="G" parent="Collectibles" instance=ExtResource("11_trtic")]
 position = Vector2(1718, -149)
-script = null
 
 [node name="BANNED" type="Node" parent="."]
 
 [node name="BAN1" parent="BANNED" instance=ExtResource("15_ir15t")]
 position = Vector2(-924, -91)
 scale = Vector2(0.5, 0.5)
-script = null
+flask_type = "bannedflask1"
 
 [node name="BAN2" parent="BANNED" instance=ExtResource("16_ca42v")]
 position = Vector2(-889.00006, -227)
 scale = Vector2(0.8, 0.8)
-script = null
 
 [node name="BAN3" parent="BANNED" instance=ExtResource("17_rysoc")]
 position = Vector2(-303, -190)
 scale = Vector2(0.7, 0.7)
-script = null
+flask_type = "bannedflask1"
 
 [node name="BAN4" parent="BANNED" instance=ExtResource("18_ssvqc")]
 position = Vector2(-250, 110)
 scale = Vector2(0.7, 0.7)
-script = null
+flask_type = "bannedflask1"
 
 [node name="BAN5" parent="BANNED" instance=ExtResource("16_ca42v")]
 position = Vector2(-153, -469)
 scale = Vector2(0.4, 0.4)
-script = null
 
 [node name="BAN6" parent="BANNED" instance=ExtResource("17_rysoc")]
 position = Vector2(-371, -401.00003)
 scale = Vector2(0.3, 0.3)
-script = null
+flask_type = "bannedflask1"
 
 [node name="collisions" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -241,7 +232,19 @@ position = Vector2(-1000.75, -253.25)
 shape = SubResource("RectangleShape2D_bt5mj")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="collisions"]
-position = Vector2(-1120.25, -166.25)
+position = Vector2(-1105, -109)
+shape = SubResource("RectangleShape2D_e1j6l")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="collisions"]
+position = Vector2(-1105, -150)
+shape = SubResource("RectangleShape2D_e1j6l")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="collisions"]
+position = Vector2(-1103, -193)
+shape = SubResource("RectangleShape2D_e1j6l")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="collisions"]
+position = Vector2(-923.4375, -34.71875)
 shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="collisions"]
@@ -318,14 +321,19 @@ grow_horizontal = 0
 script = ExtResource("4_5newe")
 
 [node name="health" parent="player/Camera2D/CanvasLayer/Control" instance=ExtResource("19_1kice")]
-layout_mode = 0
-offset_left = -154.0
-offset_top = 39.0
-offset_right = -154.0
-offset_bottom = 39.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.51000005
+anchor_right = 0.5
+anchor_bottom = -0.51000005
+offset_left = -147.0
+offset_top = 31.400002
+offset_right = -147.0
+offset_bottom = 31.400002
 
 [node name="zombie" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(-754, 237)
+position = Vector2(-682, 246.99998)
 collision_layer = 8
 collision_mask = 2
 

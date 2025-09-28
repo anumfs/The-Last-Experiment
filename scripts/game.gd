@@ -125,6 +125,8 @@ func _on_flask_touched(flask_type: String):
 	check_for_recipe()
 
 func remove_flask_from_scene(flask_type: String):
+	if not is_inside_tree():
+		return
 	# Try specific group first
 	var flasks = get_tree().get_nodes_in_group("flask_" + flask_type.to_lower())
 	if flasks.is_empty():
@@ -296,10 +298,14 @@ func check_win_condition():
 		game_win()
 
 func game_win():
+	if not is_inside_tree():
+		return
 	print("VICTORY! All flasks collected!")
 	get_tree().change_scene_to_file("res://scenes/game win.tscn")
 
 func game_over():
+	if not is_inside_tree():
+		return
 	print("GAME OVER! No hearts left!")
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	

@@ -1,14 +1,3 @@
 res://scenes/game.tscn
-res://scripts/all.gd
-res://scripts/player.gd
-res://scripts/inventory.gd
-res://scripts/healthbar.gd
+res://scenes/blueflask.tscn
 res://scripts/game.gd
-res://scenes/rules_page.tscn
-res://scripts/rules.gd
-res://scripts/start scene.gd
-res://scenes/main_menu.tscn
-res://scripts/restart.gd
-res://scenes/game_over.tscn
-res://scenes/game win.tscn
-res://scenes/collectables.tscn
