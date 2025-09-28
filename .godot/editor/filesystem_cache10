@@ -1,0 +1,81 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1759049197
+icon.svg::CompressedTexture2D::6882968474605726538::1759046964::1759047219::1::::<><><>0<>0<>7819ae3c81ba56a3695950e9242896ba<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1759047022
+::res://assets/backgrounds/::1759047223
+bg final.png::CompressedTexture2D::2200273854166376878::1759046964::1759047223::1::::<><><>0<>0<>f8f272bf3eb156addabb3ea735c768ef<>res://.godot/imported/bg final.png-2a67f4708e4d3f68567c75e74525590e.ctex::
+BGBlank.PNG::CompressedTexture2D::5705503947777792634::1759046963::1759047220::1::::<><><>0<>0<>be0c2e4d2a157391d51e3eb5f8844a66<>res://.godot/imported/BGBlank.PNG-1ab54a2d1476e13e6fbf92efd33ead13.ctex::
+BGWindow2.PNG::CompressedTexture2D::1570836605150095008::1759046963::1759047221::1::::<><><>0<>0<>e4610b26824a01ec5089208e0eab2d66<>res://.godot/imported/BGWindow2.PNG-226ddf060bf0d63daa44eb2bab62c826.ctex::
+BGWindow3.PNG::CompressedTexture2D::5866085223490487936::1759046963::1759047222::1::::<><><>0<>0<>91ea5cb4b767e40aa402d7e7bbc07a8a<>res://.godot/imported/BGWindow3.PNG-8a4c960cbd018a4f93d36781928c0798.ctex::
+ChatGPT Image Sep 27, 2025, 03_35_46 PM.png::CompressedTexture2D::4118035651257783317::1759046963::1759047222::1::::<><><>0<>0<>0cf73de6cd0633b3b19b66bdbb5520ea<>res://.godot/imported/ChatGPT Image Sep 27, 2025, 03_35_46 PM.png-1261a15026517f125c1d7e6737798554.ctex::
+grass.png::CompressedTexture2D::353470015856793704::1759046964::1759047222::1::::<><><>0<>0<>3ec31ae5626776bb0568dc8099d42f96<>res://.godot/imported/grass.png-36bee8ffc67448fb9b0b68e264ca201e.ctex::
+grass_ends.png::CompressedTexture2D::4190071716403764274::1759046964::1759047222::1::::<><><>0<>0<>2ebb3df6e71a4953067e464981b8a913<>res://.godot/imported/grass_ends.png-36379e6bc068f942b4b933971fdefdd5.ctex::
+tree.png::CompressedTexture2D::7423472841996122927::1759046964::1759047222::1::::<><><>0<>0<>dc3ec62c2c1460df2a0c1df35effcad8<>res://.godot/imported/tree.png-a71cc5a5977a055b41391c5facfeafb6.ctex::
+WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg::CompressedTexture2D::99011555483674650::1759046963::1759047223::1::::<><><>0<>0<>68f8c6e51f0491bf4b5371df97cd15ad<>res://.godot/imported/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg-abb782ef3f426209fc4ecc2cc40a672f.ctex::
+::res://assets/banned/::1759047223
+computer.png::CompressedTexture2D::2452225628088990131::1759046964::1759047222::1::::<><><>0<>0<>0c95e9600b9b6be7951be389741be3ee<>res://.godot/imported/computer.png-a47b19a0d422e5a51ffdcc09bfa45455.ctex::
+finalbgblood.jpg::CompressedTexture2D::2286420042352451175::1759046964::1759047223::1::::<><><>0<>0<>21a73e3e9f938be489cb675068ec6127<>res://.godot/imported/finalbgblood.jpg-84deeece70cf4646073e9bd10723c6f2.ctex::
+flask1.png::CompressedTexture2D::3086767502836343738::1759046964::1759047223::1::::<><><>0<>0<>cc875fb95e63d6d78b2af8bf5f88d99c<>res://.godot/imported/flask1.png-247d589e617c2f951e57343b133d02bb.ctex::
+flask2.png::CompressedTexture2D::3442923328940106011::1759046964::1759047223::1::::<><><>0<>0<>eed774706edbd0d56120215f190b902a<>res://.godot/imported/flask2.png-8b7377974cffab86d9820e3d2cf37fd5.ctex::
+jar.png::CompressedTexture2D::2025836652245287819::1759046964::1759047223::1::::<><><>0<>0<>922ef353c25ee1f7da95ca6f94905b3f<>res://.godot/imported/jar.png-0ac66173dd946f39cd18fd00457e54ea.ctex::
+testtubes.png::CompressedTexture2D::6109977019496862403::1759046964::1759047223::1::::<><><>0<>0<>f950c36e85e0d68b1f5c867b5ada0647<>res://.godot/imported/testtubes.png-a7faf39344a3cfd58471d0b93714f710.ctex::
+::res://assets/elements/::1759047219
+BioHazard.png::CompressedTexture2D::5557786365698694438::1759046964::1759047219::1::::<><><>0<>0<>5ee890336961bee4803502785deb4f30<>res://.godot/imported/BioHazard.png-b9812775c8865ed08679c8da54c4e93f.ctex::
+Blade.png::CompressedTexture2D::5439155402643972484::1759046964::1759047219::1::::<><><>0<>0<>e1326d7d3d2d4a24cb6a53c4695e9cff<>res://.godot/imported/Blade.png-5f4a107ff62cc436cc9545f2f8329e4e.ctex::
+Energy1.png::CompressedTexture2D::2121557298447157648::1759046964::1759047219::1::::<><><>0<>0<>7f4c73dff7961c6af472d291b8012ac5<>res://.godot/imported/Energy1.png-44c5f2aee1e448aebbb03427dc9bef47.ctex::
+energy2.png::CompressedTexture2D::6082617624378895284::1759046964::1759047219::1::::<><><>0<>0<>6dea78cb07f1398f3e5c0d15092904c4<>res://.godot/imported/energy2.png-6c8e8ba6a6f28b5090270c1468043c67.ctex::
+::res://assets/fonts/::1759047218
+PixelOperator8-Bold.ttf::FontFile::3128576044600775819::1759046964::1759047218::1::::<><><>0<>0<>a683d8d9f10a57d5cbecb805c86638a4<>res://.godot/imported/PixelOperator8-Bold.ttf-74faf550739674ad3170f08e646e0614.fontdata::
+PixelOperator8.ttf::FontFile::1718234775462285060::1759046964::1759047218::1::::<><><>0<>0<>e4286443edc7ffcd8ecf40766bcea251<>res://.godot/imported/PixelOperator8.ttf-6f9f01766aff16f52046b880ffb8d367.fontdata::
+::res://assets/music/::1759047219
+time_for_adventure.mp3::AudioStreamMP3::4079953581227683522::1759046964::1759047219::1::::<><><>0<>0<>f7d1a82a233b38986c99c9c8acac509f<>res://.godot/imported/time_for_adventure.mp3-b8a49ae1cfc83b211be9d82e6e985655.mp3str::
+::res://assets/objects/::1759047219
+flask.png::CompressedTexture2D::6404667258022427079::1759046964::1759047219::1::::<><><>0<>0<>9a72eec794000b706084d2ac59792554<>res://.godot/imported/flask.png-9a5015be32622aca2991f1554b5b75ec.ctex::
+Flasks 32x32.png::CompressedTexture2D::1467841927800770853::1759046964::1759047219::1::::<><><>0<>0<>3413f7c33d83befd7cf2d5eb35a33d0d<>res://.godot/imported/Flasks 32x32.png-c4eb612aac4810b3ca06f9730c53adf2.ctex::
+pistol.png::CompressedTexture2D::4044144065914633526::1759046964::1759047219::1::::<><><>0<>0<>2c43f1cfd816a3627011474b56426993<>res://.godot/imported/pistol.png-57e02699b83370e6d9994c5ad896f68d.ctex::
+shotgun.png::CompressedTexture2D::3519373183343225798::1759046964::1759047219::1::::<><><>0<>0<>e525eae7f6f7ede64aa1eee7036ba062<>res://.godot/imported/shotgun.png-84ef8f6886b72180b3c6e09768fcff73.ctex::
+::res://assets/sounds/::1759047223
+coin.wav::AudioStreamWAV::8309720173635463737::1759046964::1759047223::1::::<><><>0<>0<>960fe1e74a13ec6c69436ea8127f88ef<>res://.godot/imported/coin.wav-9081ee1c6d81d9c34d08bc916297b892.sample::
+explosion.wav::AudioStreamWAV::5434243899022770947::1759046964::1759047223::1::::<><><>0<>0<>50393cec3f12baeb6e417e80c87ae64d<>res://.godot/imported/explosion.wav-52e05e8d4b6600106c8dde082c90f915.sample::
+hurt.wav::AudioStreamWAV::3872489443874780878::1759046964::1759047223::1::::<><><>0<>0<>3a028fae8062b56a248c9a271b085781<>res://.godot/imported/hurt.wav-792baeb99505afd6a1496d4e4330b023.sample::
+jump.wav::AudioStreamWAV::1629039309294116370::1759046964::1759047223::1::::<><><>0<>0<>bfdeca85f9a571d919394ab76977ee58<>res://.godot/imported/jump.wav-395b727cde98999423d5c020c9c3492f.sample::
+power_up.wav::AudioStreamWAV::1917781583741766735::1759046964::1759047223::1::::<><><>0<>0<>11982e5dfacc5a3e01f06edac3126d20<>res://.godot/imported/power_up.wav-8349ffe570559470036ebff4b80f7fc0.sample::
+tap.wav::AudioStreamWAV::1657200489363061226::1759046964::1759047223::1::::<><><>0<>0<>03fced9c372d4b1d17bbd07e1fd3f3d5<>res://.godot/imported/tap.wav-78d4c5a48b21a853d89bec74f20510e7.sample::
+::res://assets/sprites/::1759046976
+::res://assets/sprites/characters/::1759047219
+charactersheet.png::CompressedTexture2D::781016548764506578::1759046964::1759047219::1::::<><><>0<>0<>3f4ea8f92490be4b1c7d7e96e3499cfc<>res://.godot/imported/charactersheet.png-a158e6fc44becd64a44aa9b2e213f22c.ctex::
+Scientist_1.png::CompressedTexture2D::4846040856659893813::1759046964::1759047219::1::::<><><>0<>0<>c27d01533ae4e182a4ebea2f885ec029<>res://.godot/imported/Scientist_1.png-c76a9fa72ceefa26a1965baf1f89bf2b.ctex::
+::res://assets/sprites/enemies/::1759047219
+chonker_attack.png::CompressedTexture2D::2576635284677154275::1759046964::1759047219::1::::<><><>0<>0<>1b4934285e369e62b8e0fc7476b36b9b<>res://.godot/imported/chonker_attack.png-e87bf6f9ce849c2f23cc9505f3df4367.ctex::
+::res://scenes/::1759048718
+bannedcomputer.tscn::PackedScene::2343297007251167867::1759046964::0::1::::<><><>0<>0<><>::uid://dk5uuulgre6ml::::res://scripts/bannedscript.gd<>uid://ba642ejrs7tdb::::res://assets/banned/computer.png
+bannedflask1.tscn::PackedScene::8680077068301876552::1759046964::0::1::::<><><>0<>0<><>::uid://dk5uuulgre6ml::::res://scripts/bannedscript.gd<>uid://bj8iuy6fpe0ks::::res://assets/banned/flask1.png
+bannedflask2.tscn::PackedScene::8491078353972424580::1759046964::0::1::::<><><>0<>0<><>::uid://dk5uuulgre6ml::::res://scripts/bannedscript.gd<>uid://bpb1pdrifbyit::::res://assets/banned/flask2.png
+bannedjar.tscn::PackedScene::4504465880811826651::1759046964::0::1::::<><><>0<>0<><>::uid://dk5uuulgre6ml::::res://scripts/bannedscript.gd<>uid://34lh7eynqhmh::::res://assets/banned/jar.png
+bluedropper.tscn::PackedScene::3114833449058441270::1759046964::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+bluefinalflask.tscn::PackedScene::2858703880586166754::1759046964::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+blueflask.tscn::PackedScene::2136871671361897970::1759046964::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+clearflask.tscn::PackedScene::4937589522530113355::1759046964::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+flaskA.gd::GDScript::2391334900566549727::1759046964::0::1::::<>Area2D<><>0<>0<><>::
+flaskB.gd::GDScript::3207496494755904695::1759006110::0::1::::<>Area2D<><>0<>0<><>::
+flaskC.gd::GDScript::8914819934716804122::1759006199::0::1::::<>Area2D<><>0<>0<><>::
+flaskD.gd::GDScript::830603801175514248::1759006648::0::1::::<>Area2D<><>0<>0<><>::
+flaskE.gd::GDScript::3534086189364638521::1759006676::0::1::::<>Area2D<><>0<>0<><>::
+flaskF.gd::GDScript::8976284684231436096::1759006760::0::1::::<>Area2D<><>0<>0<><>::
+flaskG.gd::GDScript::6965342398512662962::1759006798::0::1::::<>Area2D<><>0<>0<><>::
+game.gd::GDScript::4365465104640550841::1759005031::0::1::::<>Node2D<><>0<>0<><>::
+game.tscn::PackedScene::1380349077253944309::1759049059::0::1::::<><><>0<>0<><>::res://scripts/game.gd<>res://assets/backgrounds/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg<>res://scenes/player.tscn<>res://scenes/zombie.tscn<>res://scenes/blueflask.tscn<>res://scenes/reddropper.tscn<>res://scenes/greenfinaltube.tscn<>res://scenes/clearflask.tscn<>res://scenes/bluedropper.tscn<>res://scenes/bluefinalflask.tscn<>res://scenes/redfinalflask.tscn<>res://scenes/random1.tscn<>res://scenes/random2.tscn<>res://scenes/random3.tscn<>res://scenes/bannedcomputer.tscn<>res://scenes/bannedflask1.tscn<>res://scenes/bannedflask2.tscn<>res://scenes/bannedjar.tscn
+greenfinaltube.tscn::PackedScene::8775684066909861382::1759047426::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+health.tscn::PackedScene::2701760029503243917::1759047426::0::1::::<><><>0<>0<><>::uid://dxqqssk77wp3l::::res://scripts/healthbar.gd<>uid://bvmy51xrgpuls::::res://assets/elements/Health.png
+inventory.tscn::PackedScene::8905962982686423461::1759047426::0::1::::<><><>0<>0<><>::uid://ckptymrt888n2::::res://scripts/inventory.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+killzone.tscn::PackedScene::3153289949664000018::1759047426::0::1::::<><><>0<>0<><>::uid://cxd4hqj2i4kv6::::res://scripts/scripts/killzone.gd
+main_menu.tscn::PackedScene::4153892649594382173::1759047426::0::1::::<><><>0<>0<><>::uid://c3c8vewoe6def::::res://scripts/scripts/start scene.gd<>uid://budly2rsxvpab::::res://assets/fonts/PixelOperator8.ttf<>uid://d4khpulaoi2gp::::res://assets/fonts/PixelOperator8-Bold.ttf
+player.tscn::PackedScene::4713846482559587608::1759047426::0::1::::<><><>0<>0<><>::uid://lelh1dah7osg::::res://assets/sprites/characters/charactersheet.png<>uid://ce3hqmiy4virh::::res://scripts/player.gd
+random1.tscn::PackedScene::4229092296192862660::1759047426::0::1::::<><><>0<>0<><>::uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+random2.tscn::PackedScene::9147160288331535535::1759047426::0::1::::<><><>0<>0<><>::uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+random3.tscn::PackedScene::4368593845490412909::1759047426::0::1::::<><><>0<>0<><>::uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+reddropper.tscn::PackedScene::1571177777373177000::1759047426::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+redfinalflask.tscn::PackedScene::2049714056009870001::1759047426::0::1::::<><><>0<>0<><>::uid://bo417qibfkj25::::res://scripts/flask.gd<>uid://u6be3i7wh6xd::::res://assets/objects/Flasks 32x32.png
+zombie.tscn::PackedScene::3285078895391520285::1759047426::0::1::::<><><>0<>0<><>::uid://ogpyg65v3b32::::res://scripts/zombie.gd<>uid://nd1t6ores4nj::::res://assets/sprites/enemies/zombie_attack.png<>uid://dx8l3dtgfvl5c::::res://assets/sprites/enemies/zombie_run.png<>uid://bk6qhv3lvkbxa::::res://scenes/killzone.tscn
+::res://scripts/::1759047566
+all.gd::GDScript::5924976869048221821::1759046964::0::1::::<>Control<><>0<>0<><>::
