@@ -1,3 +1,2 @@
-res://scenes/game.tscn
-res://scenes/blueflask.tscn
 res://scripts/game.gd
+res://scenes/game.tscn
