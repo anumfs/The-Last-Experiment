@@ -1,23 +1,23 @@
 [gd_scene load_steps=43 format=3 uid="uid://twwfawqogqiv"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_264po"]
-[ext_resource type="Texture2D" path="res://assets/backgrounds/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg" id="2_264po"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="3_lbhrr"]
-[ext_resource type="PackedScene" path="res://scenes/zombie.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" path="res://scenes/blueflask.tscn" id="5_u5sy4"]
-[ext_resource type="PackedScene" path="res://scenes/reddropper.tscn" id="6_gee14"]
-[ext_resource type="PackedScene" path="res://scenes/greenfinaltube.tscn" id="7_0tnpc"]
-[ext_resource type="PackedScene" path="res://scenes/clearflask.tscn" id="8_kvpfn"]
-[ext_resource type="PackedScene" path="res://scenes/bluedropper.tscn" id="9_dinhu"]
-[ext_resource type="PackedScene" path="res://scenes/bluefinalflask.tscn" id="10_kvuet"]
-[ext_resource type="PackedScene" path="res://scenes/redfinalflask.tscn" id="11_trtic"]
-[ext_resource type="PackedScene" path="res://scenes/random1.tscn" id="12_dinhu"]
-[ext_resource type="PackedScene" path="res://scenes/random2.tscn" id="13_trtic"]
-[ext_resource type="PackedScene" path="res://scenes/random3.tscn" id="14_ir15t"]
-[ext_resource type="PackedScene" path="res://scenes/bannedcomputer.tscn" id="15_ir15t"]
-[ext_resource type="PackedScene" path="res://scenes/bannedflask1.tscn" id="16_ca42v"]
-[ext_resource type="PackedScene" path="res://scenes/bannedflask2.tscn" id="17_rysoc"]
-[ext_resource type="PackedScene" path="res://scenes/bannedjar.tscn" id="18_ssvqc"]
+[ext_resource type="Script" uid="uid://b3gwtp1nuovl6" path="res://scripts/game.gd" id="1_264po"]
+[ext_resource type="Texture2D" uid="uid://bn7x8733p1wo" path="res://assets/backgrounds/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg" id="2_264po"]
+[ext_resource type="PackedScene" uid="uid://b8fomlqded74g" path="res://scenes/player.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bm2k1fqrfnhmr" path="res://scenes/zombie.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://5pd71v7sudda" path="res://scenes/blueflask.tscn" id="5_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://wndcleaxtw7i" path="res://scenes/reddropper.tscn" id="6_gee14"]
+[ext_resource type="PackedScene" uid="uid://dxbah8amvowwc" path="res://scenes/greenfinaltube.tscn" id="7_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://ccl2m4axotjy6" path="res://scenes/clearflask.tscn" id="8_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://bkm337yb6djg5" path="res://scenes/bluedropper.tscn" id="9_dinhu"]
+[ext_resource type="PackedScene" uid="uid://bgy1o2fedpux3" path="res://scenes/bluefinalflask.tscn" id="10_kvuet"]
+[ext_resource type="PackedScene" uid="uid://4g5qxvwowba4" path="res://scenes/redfinalflask.tscn" id="11_trtic"]
+[ext_resource type="PackedScene" uid="uid://b1iusdjfyhih5" path="res://scenes/random1.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://d3k7nm6m7h568" path="res://scenes/random2.tscn" id="13_trtic"]
+[ext_resource type="PackedScene" uid="uid://b3igdql1kmfvp" path="res://scenes/random3.tscn" id="14_ir15t"]
+[ext_resource type="PackedScene" uid="uid://8nd022qagvjf" path="res://scenes/bannedcomputer.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://dvwxuo6g00h7u" path="res://scenes/bannedflask1.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://ds8e243pdvu81" path="res://scenes/bannedflask2.tscn" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://b5f85os76g7ut" path="res://scenes/bannedjar.tscn" id="18_ssvqc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
 normal = Vector2(-0.9999987, 0.0016339849)
@@ -108,6 +108,7 @@ texture = ExtResource("2_264po")
 [node name="player" parent="." instance=ExtResource("3_lbhrr")]
 position = Vector2(-232, 353)
 scale = Vector2(1.5, 1.5)
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 scale = Vector2(0.6666667, 0.6666667)
@@ -124,16 +125,19 @@ remote_path = NodePath("../Camera2D")
 z_index = 1
 position = Vector2(723.00006, -215)
 collision_mask = 2
+script = null
 
 [node name="zombie2" parent="." instance=ExtResource("4_lbhrr")]
 z_index = 1
 position = Vector2(-753, 122.000015)
 collision_mask = 2
+script = null
 
 [node name="zombie3" parent="." instance=ExtResource("4_lbhrr")]
 z_index = 1
 position = Vector2(1077, 401.99994)
 collision_mask = 2
+script = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 2)
@@ -174,54 +178,67 @@ position = Vector2(148, -421)
 [node name="E" parent="Collectibles" instance=ExtResource("9_dinhu")]
 position = Vector2(-1122, 547)
 rotation = 0.64751714
+script = null
 
 [node name="A" parent="Collectibles" instance=ExtResource("5_u5sy4")]
 position = Vector2(-451, -204)
+script = null
 
 [node name="B" parent="Collectibles" instance=ExtResource("6_gee14")]
 position = Vector2(-1454, -381)
 rotation = 0.22863813
 scale = Vector2(0.49999997, 0.49999997)
+script = null
 
 [node name="C" parent="Collectibles" instance=ExtResource("7_0tnpc")]
 position = Vector2(-160.99998, -178.99998)
 rotation = 0.86219263
 scale = Vector2(0.7, 0.7)
+script = null
 
 [node name="D" parent="Collectibles" instance=ExtResource("8_kvpfn")]
 position = Vector2(153, -512)
+script = null
 
 [node name="F" parent="Collectibles" instance=ExtResource("10_kvuet")]
 position = Vector2(-185, -458)
+script = null
 
 [node name="G" parent="Collectibles" instance=ExtResource("11_trtic")]
 position = Vector2(1718, -149)
+script = null
 
 [node name="BANNED" type="Node" parent="."]
 
 [node name="BAN1" parent="BANNED" instance=ExtResource("15_ir15t")]
 position = Vector2(-924, -91)
 scale = Vector2(0.5, 0.5)
+script = null
 
 [node name="BAN2" parent="BANNED" instance=ExtResource("16_ca42v")]
 position = Vector2(-889.00006, -227)
 scale = Vector2(0.8, 0.8)
+script = null
 
 [node name="BAN3" parent="BANNED" instance=ExtResource("17_rysoc")]
 position = Vector2(-303, -190)
 scale = Vector2(0.7, 0.7)
+script = null
 
 [node name="BAN4" parent="BANNED" instance=ExtResource("18_ssvqc")]
 position = Vector2(-250, 110)
 scale = Vector2(0.7, 0.7)
+script = null
 
 [node name="BAN5" parent="BANNED" instance=ExtResource("16_ca42v")]
 position = Vector2(-153, -469)
 scale = Vector2(0.4, 0.4)
+script = null
 
 [node name="BAN6" parent="BANNED" instance=ExtResource("17_rysoc")]
 position = Vector2(-371, -401.00003)
 scale = Vector2(0.3, 0.3)
+script = null
 
 [node name="collisions" type="StaticBody2D" parent="."]
 collision_layer = 2

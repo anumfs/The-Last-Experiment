@@ -270,10 +270,8 @@ func check_win_condition():
 
 func game_win():
 	print("VICTORY! All flasks collected!")
-	# Add your win logic here:
-	# get_tree().change_scene_to_file("res://WinScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/game win.tscn")
 
 func game_over():
 	print("GAME OVER! No hearts left!")
-	# Add your game over logic:
-	# get_tree().change_scene_to_file("res://GameOverScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
