@@ -6,20 +6,21 @@ res://scenes/bluedropper.tscn::4990bebae8bc5dd3a2d99e5901b5fb6a::1759055782::res
 res://scenes/bluefinalflask.tscn::3c7998f2a699c00da0ce9e19996f8ce5::1759046964::res://.godot/exported/133200997/export-7cc515d00636e98c956468fe0f8b600d-bluefinalflask.scn
 res://scenes/blueflask.tscn::0138ec32d22206140f2dbf24fe18dd9a::1759056814::res://.godot/exported/133200997/export-a1e26eea0bda30f2a6a2cf9ffe82fc29-blueflask.scn
 res://scenes/clearflask.tscn::17ddba1c67f49557cf414b74bd1c814c::1759046964::res://.godot/exported/133200997/export-a58386cba2c1c9af0030586341b81f9e-clearflask.scn
-res://scenes/game win.tscn::741e2820eea4f743dc7d29790192d92f::1759057275::res://.godot/exported/133200997/export-ad0bdf43b1d344f62b8dfec605130cfe-game win.scn
-res://scenes/game.tscn::61bc5153d31803ea943e58fe0eba0901::1759058866::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
-res://scenes/game_over.tscn::b359365a88884945d17ebe300759dedb::1759052543::res://.godot/exported/133200997/export-21b8bee24a2bf9e9929bc898cc82b612-game_over.scn
+res://scenes/game win.tscn::741e2820eea4f743dc7d29790192d92f::1759073558::res://.godot/exported/133200997/export-ad0bdf43b1d344f62b8dfec605130cfe-game win.scn
+res://scenes/game.tscn::f4b4060cbe7ab3b69f6c3af8d6642a4f::1759090655::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/game_over.tscn::9973a2366dc37c5f42252674c62017b3::1759073581::res://.godot/exported/133200997/export-21b8bee24a2bf9e9929bc898cc82b612-game_over.scn
 res://scenes/greenfinaltube.tscn::0c41c690a29749d97d91a1a26f1542d9::1759047426::res://.godot/exported/133200997/export-1a0223b08265e196bc936702f91a5138-greenfinaltube.scn
 res://scenes/health.tscn::9050c85ecb6ef2185c16cc5cd16d3e07::1759053789::res://.godot/exported/133200997/export-2bf179ce8a6c42a8e582f4195b66e230-health.scn
 res://scenes/inventory.tscn::455f703ba03cb220d43bb47e49f443b9::1759054967::res://.godot/exported/133200997/export-8da5572b7ee9ac1ff6846ff1bc3fa380-inventory.scn
 res://scenes/killzone.tscn::089d22b180e0e7ff923a193ba5de0f07::1759047426::res://.godot/exported/133200997/export-494bf1445653c44a49a39c8f8b1ce8d0-killzone.scn
-res://scenes/main_menu(final).tscn::4d258282315226a3c558ee43b6aed8b1::1759053625::res://.godot/exported/133200997/export-eaf257f5b8972c5020ddd92fa9bdd281-main_menu(final).scn
-res://scenes/main_menu.tscn::fea495143b9ea6cbef09695fe12e6769::1759047426::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+res://scenes/main_menu.tscn::4d258282315226a3c558ee43b6aed8b1::1759073460::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
 res://scenes/player.tscn::266249f604377eadfc0590adbf3e1739::1759058573::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
 res://scenes/random1.tscn::99e525b436e083c372a17e171c9d894e::1759047426::res://.godot/exported/133200997/export-7c4709c0bf17d2cad5da82e9a6fff822-random1.scn
 res://scenes/random2.tscn::a15084e5f78d28d74186e060fa8127ea::1759047426::res://.godot/exported/133200997/export-869ad2ed7ddbcf034e4923c35346256f-random2.scn
 res://scenes/random3.tscn::87c5371be8651bbe3fadb6fd0eafa862::1759047426::res://.godot/exported/133200997/export-527f2ae65cfbc706c01aaedf44ffefcd-random3.scn
 res://scenes/reddropper.tscn::754a27f4446c269acce8a74867f6331b::1759047426::res://.godot/exported/133200997/export-006c4c213fddf864443a721b5ea1f8d9-reddropper.scn
 res://scenes/redfinalflask.tscn::7ac9bbdb28ba84fcf7cc26be89ae586e::1759047426::res://.godot/exported/133200997/export-ad7bd418596fccb109e93a910243bf4e-redfinalflask.scn
-res://scenes/rules_page.tscn::760f0e50ee5231cb18be0af04ecb18fa::1759052433::res://.godot/exported/133200997/export-5fcf83837e32869f44a8691cf84973b9-rules_page.scn
+res://scenes/rules_page.tscn::91387c9496de66b9e6d677acf6482c87::1759086921::res://.godot/exported/133200997/export-5fcf83837e32869f44a8691cf84973b9-rules_page.scn
 res://scenes/zombie.tscn::dd4b32a0a76fd613a60c221b21f091fe::1759058422::res://.godot/exported/133200997/export-eae6add4c928fd8479be83ea3330e8af-zombie.scn
+res://scenes/audio_player.tscn::9962968cd98cf197a9541bfae94ef243::1759086949::res://.godot/exported/133200997/export-267e09f2b00f03298c3a6991f817a21a-audio_player.scn
+res://scenes/collectables.tscn::068ba88ecf0e0f6ad3102a2a76bf67d0::1759076438::res://.godot/exported/133200997/export-4816b8233fabd991d2390e6a3c6a6aa7-collectables.scn
