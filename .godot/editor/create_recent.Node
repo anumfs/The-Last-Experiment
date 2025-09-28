@@ -1,5 +1,9 @@
-Panel
+AnimationPlayer
+AnimatedSprite2D
 Sprite2D
+StaticBody2D
+Area2D
+Panel
 Camera2D
 Label
 VBoxContainer

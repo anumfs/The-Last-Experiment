@@ -302,3 +302,9 @@ func game_win():
 func game_over():
 	print("GAME OVER! No hearts left!")
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
+	#TEST
+func _input(event):
+	if event.is_action_pressed("ui_accept"):  # Press SPACE
+		print("MANUAL TEST: Collecting flask A")
+		_on_flask_touched("A")

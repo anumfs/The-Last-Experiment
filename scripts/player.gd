@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO
 	
 	# Check for input and set animations
-	if Input.is_action_pressed("MoveUp"):
+	if Input.is_action_pressed("Move Up"):
 		input_vector.y -= 1
 	if Input.is_action_pressed("Move Down"):
 		input_vector.y += 1

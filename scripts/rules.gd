@@ -7,4 +7,4 @@ func _ready():
 	
 func _on_back_pressed():
 	print("Going back to start scene...")
-	get_tree().change_scene_to_file("res://scenes/main_menu(final).tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

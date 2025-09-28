@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3gwtp1nuovl6" path="res://scripts/game.gd" id="1_264po"]
 [ext_resource type="Texture2D" uid="uid://bn7x8733p1wo" path="res://assets/backgrounds/WhatsApp Image 2025-09-27 at 15.49.22_6fc2d05f.jpg" id="2_264po"]
 [ext_resource type="PackedScene" uid="uid://b8fomlqded74g" path="res://scenes/player.tscn" id="3_lbhrr"]
-[ext_resource type="Script" uid="uid://cg3xww0kexi2p" path="res://scenes/positioning.gd" id="4_5newe"]
+[ext_resource type="Script" uid="uid://cg3xww0kexi2p" path="res://scripts/positioning.gd" id="4_5newe"]
 [ext_resource type="PackedScene" uid="uid://bm2k1fqrfnhmr" path="res://scenes/zombie.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://5pd71v7sudda" path="res://scenes/blueflask.tscn" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://wndcleaxtw7i" path="res://scenes/reddropper.tscn" id="6_gee14"]

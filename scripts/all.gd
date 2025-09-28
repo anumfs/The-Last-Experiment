@@ -1,137 +1,49 @@
-# === START SCENE SCRIPT (StartScene.gd) ===
-# (Attach to your start scene main node)
-
+# START SCENE
 extends Control
 
-@onready var start_button = $VBoxContainer/StartButton
-@onready var rules_button = $VBoxContainer/RulesButton
-@onready var rules_panel = $RulesPanel
-@onready var back_button = $RulesPanel/VBoxContainer/BackButton
-@onready var rules_text = $RulesPanel/VBoxContainer/ScrollContainer/RulesLabel
 
-func _ready():
-	# Connect buttons
-	start_button.pressed.connect(_on_start_pressed)
-	rules_button.pressed.connect(_on_rules_pressed)
-	
-	# Hide rules panel initially
-	rules_panel.visible = false
-	
-	# Set up rules text
-	setup_rules_text()
-
-func _on_start_pressed():
-	print("Starting game...")
-	# Change to main game scene
-	get_tree().change_scene_to_file("res://Main.tscn")  # Adjust path to your main scene
-
-func _on_rules_pressed():
-	print("Showing rules...")
-	rules_panel.visible = true
-
-
-
-func setup_rules_text():
-	var rules = """
-🧪 FLASK MIXING RULES 🧪
-
-OBJECTIVE:
-Collect C, F, and G flasks in your inventory!
-
-MIXING RECIPES:
-• A + B = C (in order)
-• D + E = F (in order)
-• G can be collected directly
-
-HOW TO PLAY:
-1. Click flasks to collect them
-2. Flasks disappear when clicked
-3. Must complete recipes in sequence
-4. Only C, F, G go to your inventory
-
-⚠️ DANGER:
-• Red objects are BANNED!
-• Clicking banned items removes 1 heart
-• You have 3 hearts - don't lose them all!
-
-STRATEGY:
-• Click A, then B to create C
-• Click D, then E to create F  
-• Avoid red banned objects
-• Collect C, F, G for victory!
-
-Good luck! 🍀
-"""
-	rules_text.text = rules
-
-# === ALTERNATIVE: SIMPLE START SCENE ===
-# (If you prefer a simpler version without rules panel)
-
-extends Control
-
-@onready var start_button = $CenterContainer/VBoxContainer/StartButton
-@onready var rules_button = $CenterContainer/VBoxContainer/RulesButton
+@onready var start_button: Button = $VBoxContainer/Button
+@onready var rules_button: Button = $VBoxContainer/Button2
 
 func _ready():
 	start_button.pressed.connect(_on_start_pressed)
 	rules_button.pressed.connect(_on_rules_pressed)
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Main.tscn")
+	print("Going to main game...")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_rules_pressed():
-	# Show rules in a simple dialog
-	var dialog = AcceptDialog.new()
-	dialog.dialog_text = "Mix A+B=C, D+E=F. Collect C,F,G. Avoid red banned items!"
-	add_child(dialog)
-	dialog.popup_centered()
+	print("Going to rules page...")
+	get_tree().change_scene_to_file("res://scenes/rules_page.tscn")
+
+#RULES
+extends Control
+
+@onready var button: Button = $Button
+
+func _ready():
+	button.pressed.connect(_on_back_pressed)
 	
-	# Auto remove dialog when closed
-	dialog.confirmed.connect(dialog.queue_free)
+func _on_back_pressed():
+	print("Going back to start scene...")
+	get_tree().change_scene_to_file("res://scenes/main_menu(final).tscn")
 
-# ===================================================================
-# === SCENE STRUCTURE GUIDE ===
-# ===================================================================
+#RESTART
+extends Control
 
-# OPTION 1: Full Rules Panel Scene Structure:
-# StartScene (Control)
-# ├── Background (ColorRect or TextureRect)
-# ├── VBoxContainer
-# │   ├── TitleLabel ("Flask Mixer Game")
-# │   ├── StartButton
-# │   └── RulesButton  
-# └── RulesPanel (Panel)
-#     └── VBoxContainer
-#         ├── TitleLabel ("Rules")
-#         ├── ScrollContainer
-#         │   └── RulesLabel (rich text enabled)
-#         └── BackButton
+@onready var restart: Button = $Button
 
-# OPTION 2: Simple Scene Structure:
-# StartScene (Control)
-# └── CenterContainer
-#     └── VBoxContainer
-#         ├── TitleLabel
-#         ├── StartButton
-#         └── RulesButton
+func _ready():
+	restart.pressed.connect(_on_restart_pressed)
+	
+func _on_restart_pressed():
+	print("Restarting game...")
+	get_tree().change_scene_to_file("res://scenes/main_menu(final).tscn")
 
-# ===================================================================
-# === GAME SCENE TRANSITION SCRIPT ===
-# (Add this to your main game scene if you want a back to menu option)
-# ===================================================================
-
-extends Node
-
-func _input(event):
-	# Press ESC to return to main menu
-	if event.is_action_pressed("ui_cancel"):
-		return_to_menu()
-
-func return_to_menu():
-	get_tree().change_scene_to_file("res://StartScene.tscn")
-
-# You can also add a pause menu with back to main menu option
+#GAME
 # === GAME MANAGER SCRIPT (Main Scene) ===
+# Updated for separate flask scenes (FlaskA.tscn, FlaskB.tscn, etc.)
 extends Node2D
 
 # Define your mixing recipes (order matters!)
@@ -145,19 +57,19 @@ var recipes = {
 var current_sequence = []
 var blocked_flasks = []
 
-# INVENTORY TRACKING - Only C, F, G
+# inventory tracking - Only C, F, G
 var inventory = {
 	"C": 0,
 	"F": 0,
 	"G": 0
 }
 
-# HEALTH SYSTEM
+# health system
 @export var max_health: int = 3
 var current_health: int = 3
 
-# BANNED ITEMS
-var banned_items = ["bannedflask1", "bannedflask2", "bannedjar", "bannedcomputer"]  # Add your banned item names
+#banned items
+var banned_items = ["bannedflask1", "bannedflask2", "bannedjar", "bannedcomputer"]
 
 signal inventory_changed(item: String, count: int)
 signal health_changed(new_health: int)
@@ -166,19 +78,67 @@ func _ready():
 	# Initialize health
 	current_health = max_health
 	
-	# Connect all flask signals
+	# Connect all flask and banned item signals
+	print("=== GAME MANAGER STARTING ===")
 	connect_all_objects()
+	
+	# Debug: Check what's in the scene
+	var all_flasks = get_tree().get_nodes_in_group("flasks")
+	print("Total flasks found: ", all_flasks.size())
+	for flask in all_flasks:
+		if flask.has_method("get") and flask.get("flask_type"):
+			print("Flask found: ", flask.flask_type, " at ", flask.position)
+		else:
+			print("Flask found but no flask_type property")
 
 func connect_all_objects():
-	# Connect regular flasks
-	var flasks = get_tree().get_nodes_in_group("flasks")
-	for flask in flasks:
-		flask.flask_touched.connect(_on_flask_touched)
+	# Connect regular flasks (A, B, C, D, E, F, G)
+	connect_flask_type("A")
+	connect_flask_type("B")
+	connect_flask_type("C")
+	connect_flask_type("D")
+	connect_flask_type("E")
+	connect_flask_type("F")
+	connect_flask_type("G")
 	
 	# Connect banned items
-	var banned_objects = get_tree().get_nodes_in_group("banned_items")
-	for banned in banned_objects:
-		banned.flask_touched.connect(_on_flask_touched)
+	connect_banned_type("bannedflask1")
+	connect_banned_type("bannedflask2")
+	connect_banned_type("bannedjar")
+	connect_banned_type("bannedcomputer")
+
+func connect_flask_type(flask_type: String):
+	# Find all instances of this flask type
+	var flask_nodes = get_tree().get_nodes_in_group("flask_" + flask_type.to_lower())
+	if flask_nodes.is_empty():
+		# Fallback: try generic "flasks" group
+		flask_nodes = get_tree().get_nodes_in_group("flasks")
+		flask_nodes = flask_nodes.filter(func(node): return node.has_method("get") and node.get("flask_type") == flask_type)
+	
+	print("Looking for flask type: ", flask_type, " - Found: ", flask_nodes.size(), " instances")
+	
+	for flask in flask_nodes:
+		if flask.has_signal("flask_touched"):
+			if not flask.flask_touched.is_connected(_on_flask_touched):
+				flask.flask_touched.connect(_on_flask_touched)
+				print("✅ Connected flask: ", flask_type)
+			else:
+				print("⚠ Flask already connected: ", flask_type)
+		else:
+			print("❌ Flask missing 'flask_touched' signal: ", flask_type)
+
+func connect_banned_type(banned_type: String):
+	# Find all instances of this banned type
+	var banned_nodes = get_tree().get_nodes_in_group("banned_" + banned_type.to_lower())
+	if banned_nodes.is_empty():
+		# Fallback: try generic "banned_items" group
+		banned_nodes = get_tree().get_nodes_in_group("banned_items")
+		banned_nodes = banned_nodes.filter(func(node): return node.flask_type == banned_type)
+	
+	for banned in banned_nodes:
+		if banned.has_signal("flask_touched") and not banned.flask_touched.is_connected(_on_flask_touched):
+			banned.flask_touched.connect(_on_flask_touched)
+			print("Connected banned item: ", banned_type)
 
 func _on_flask_touched(flask_type: String):
 	print("Touched: ", flask_type)
@@ -209,7 +169,14 @@ func _on_flask_touched(flask_type: String):
 	check_for_recipe()
 
 func remove_flask_from_scene(flask_type: String):
-	var flasks = get_tree().get_nodes_in_group("flasks")
+	# Try specific group first
+	var flasks = get_tree().get_nodes_in_group("flask_" + flask_type.to_lower())
+	if flasks.is_empty():
+		# Fallback to generic group
+		flasks = get_tree().get_nodes_in_group("flasks")
+		flasks = flasks.filter(func(node): return node.flask_type == flask_type)
+	
+	# Remove the first instance found
 	for flask in flasks:
 		if flask.flask_type == flask_type:
 			# Visual feedback
@@ -217,6 +184,23 @@ func remove_flask_from_scene(flask_type: String):
 			var tween = create_tween()
 			tween.tween_property(flask, "scale", Vector2.ZERO, 0.3)
 			tween.tween_callback(flask.queue_free)
+			break
+
+func remove_banned_from_scene(item_type: String):
+	# Try specific group first
+	var banned_objects = get_tree().get_nodes_in_group("banned_" + item_type.to_lower())
+	if banned_objects.is_empty():
+		# Fallback to generic group
+		banned_objects = get_tree().get_nodes_in_group("banned_items")
+		banned_objects = banned_objects.filter(func(node): return node.flask_type == item_type)
+	
+	# Remove the first instance found
+	for banned in banned_objects:
+		if banned.flask_type == item_type:
+			banned.modulate = Color.RED
+			var tween = create_tween()
+			tween.tween_property(banned, "modulate:a", 0.0, 0.5)
+			tween.tween_callback(banned.queue_free)
 			break
 
 func collect_inventory_item(item_type: String):
@@ -230,6 +214,9 @@ func collect_inventory_item(item_type: String):
 	# Update UI
 	inventory_changed.emit(item_type, inventory[item_type])
 	print_inventory()
+	
+	# Check win condition
+	check_win_condition()
 
 func handle_banned_item(item_type: String):
 	print("Hit banned item: ", item_type, "! Losing 1 heart!")
@@ -243,14 +230,7 @@ func handle_banned_item(item_type: String):
 	print("Hearts remaining: ", current_health)
 	
 	# Remove banned item with red effect
-	var banned_objects = get_tree().get_nodes_in_group("banned_items")
-	for banned in banned_objects:
-		if banned.flask_type == item_type:
-			banned.modulate = Color.RED
-			var tween = create_tween()
-			tween.tween_property(banned, "modulate:a", 0.0, 0.5)
-			tween.tween_callback(banned.queue_free)
-			break
+	remove_banned_from_scene(item_type)
 	
 	# Check game over
 	if current_health <= 0:
@@ -306,15 +286,35 @@ func block_other_flasks(recipe_ingredients: Array):
 func spawn_result(result_type: String):
 	print("Spawning ", result_type)
 	
-	# Create new flask
-	var new_flask = preload("res://Flask.tscn").instantiate()
-	new_flask.flask_type = result_type
+	# Map your actual scene file names
+	var scene_mapping = {
+		"C": "res://scenes/greenfinaltube.tscn",  # Based on your scene file
+		"F": "res://scenes/bluefinalflask.tscn",  # Based on your scene file  
+		"G": "res://scenes/redfinalflask.tscn"    # Based on your scene file
+	}
+	
+	var flask_scene_path = scene_mapping.get(result_type, "res://scenes/" + result_type.to_lower() + "flask.tscn")
+	var flask_scene = load(flask_scene_path)
+	
+	if flask_scene == null:
+		print("Error: Could not load ", flask_scene_path)
+		print("Available scenes should be: ", scene_mapping)
+		return
+	
+	# Create new flask instance
+	var new_flask = flask_scene.instantiate()
 	
 	# Position it somewhere visible
 	new_flask.position = Vector2(400, 300)  # Adjust as needed
 	
 	add_child(new_flask)
-	new_flask.flask_touched.connect(_on_flask_touched)
+	
+	# Connect the signal
+	if new_flask.has_signal("flask_touched"):
+		new_flask.flask_touched.connect(_on_flask_touched)
+		print("✅ Connected spawned flask: ", result_type)
+	else:
+		print("❌ Spawned flask missing signal: ", result_type)
 	
 	# Visual spawn effect
 	new_flask.scale = Vector2.ZERO
@@ -333,28 +333,150 @@ func print_inventory():
 			print(item, ": ", inventory[item])
 	print("================")
 
+func check_win_condition():
+	# Check if player has collected at least one of each: C, F, G
+	if inventory["C"] > 0 and inventory["F"] > 0 and inventory["G"] > 0:
+		print("YOU WIN! Collected all required items!")
+		game_win()
+
+func game_win():
+	print("VICTORY! All flasks collected!")
+	get_tree().change_scene_to_file("res://scenes/game win.tscn")
+
 func game_over():
 	print("GAME OVER! No hearts left!")
-	# Add your game over logic:
-	# get_tree().change_scene_to_file("res://GameOver.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
+#FLASK
+# FLASK COLLECTION SCRIPT
+# Attach this to each collectible flask scene (blueflask.tscn, reddropper.tscn, etc.)
 
-# ===================================================================
-# === INVENTORY UI SCRIPT (InventoryUI.gd) ===
-# (Attach to inventory UI container in top corner)
-# ===================================================================
+extends Area2D
 
-extends Control
-
-@onready var c_label = $VBoxContainer/CLabel
-@onready var f_label = $VBoxContainer/FLabel
-@onready var g_label = $VBoxContainer/GLabel
+@export var flask_type: String = "A"  # Set in Inspector for each scene
+signal flask_touched(type: String)
 
 func _ready():
-	# Connect to game manager
-	var game_manager = get_node("/root/Main")  # Adjust path
+	print("Flask ", flask_type, " ready at position: ", global_position)
+	add_to_group("flasks")
+	
+	# Connect collision detection
+	body_entered.connect(_on_body_entered)
+	
+	# Also add mouse click detection as backup
+	input_event.connect(_on_input_event)
+	
+	# Make sure monitoring is enabled
+	monitoring = true
+	monitorable = true
+	
+	print("Flask ", flask_type, " is ready and clickable!")
+
+func _on_body_entered(body):
+	print("Something entered flask ", flask_type, ": ", body.name)
+	if body.is_in_group("player"):
+		print("PLAYER COLLECTED FLASK: ", flask_type)
+		flask_touched.emit(flask_type)
+	else:
+		print("Non-player entered flask: ", body.name, " - Groups: ", body.get_groups())
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		print("CLICKED FLASK: ", flask_type)
+		flask_touched.emit(flask_type)
+			
+
+		
+func _input_event(viewport, event, shape_idx):
+	# Backup method
+	if event is InputEventMouseButton and event.pressed:
+		print("BACKUP CLICK - FLASK: ", flask_type)
+		flask_touched.emit(flask_type)
+
+#PLAYER
+extends CharacterBody2D
+
+@onready var anim = $AnimatedSprite2D
+@export var speed := 300
+
+# In your player script _ready() function:
+func _ready():
+	add_to_group("player")
+	print("Player added to group") 
+
+func _physics_process(delta: float) -> void:
+	# Get input direction for 8-directional movement
+	var input_vector = Vector2.ZERO
+	
+	# Check for input and set animations
+	if Input.is_action_pressed("MoveUp"):
+		input_vector.y -= 1
+	if Input.is_action_pressed("Move Down"):
+		input_vector.y += 1
+	if Input.is_action_pressed("Move Right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("Move Left"):
+		input_vector.x -= 1
+	
+	# Normalize for consistent diagonal movement speed
+	input_vector = input_vector.normalized()
+	
+	# Set velocity
+	velocity = input_vector * speed
+	
+	# Handle animations based on movement direction
+	if input_vector != Vector2.ZERO:
+		# Moving - determine primary direction for animation
+		if abs(input_vector.x) > abs(input_vector.y):
+			# Horizontal movement is stronger
+			if input_vector.x > 0:
+				anim.play("move_right")
+			else:
+				anim.play("move_left")
+		else:
+			# Vertical movement is stronger
+			if input_vector.y < 0:
+				anim.play("move_up")
+			else:
+				anim.play("move_down")
+	else:
+		# Not moving
+		anim.play("idle")
+	
+	# Apply movement with collision detection
+	move_and_slide()
+
+# INVENTORY UI SCRIPT
+extends Control
+
+@onready var f_label: Label = $VBoxContainer/Sprite2D2
+@onready var c_label: Label = $VBoxContainer/Sprite2D
+@onready var g_label: Label = $VBoxContainer/Sprite2D3
+
+func _ready():
+	# Try multiple possible paths to find game manager
+	var game_manager = null
+	
+	# Try different possible paths
+	var possible_paths = [
+		"/root/Game",        # If scene is named Game
+		"../../",            # If UI is child of Game
+		"../../../",         # If UI is nested deeper
+		get_tree().current_scene  # Current scene
+	]
+	
+	for path in possible_paths:
+		var node = get_node_or_null(path)
+		if node and node.has_signal("inventory_changed"):
+			game_manager = node
+			print("Found game manager at: ", path)
+			break
+	
 	if game_manager:
 		game_manager.inventory_changed.connect(_on_inventory_changed)
+		print("Inventory UI connected successfully!")
+	else:
+		print("ERROR: Could not find game manager!")
 	
 	# Initialize labels
 	update_display("C", 0)
@@ -374,26 +496,41 @@ func update_display(item: String, count: int):
 		"G":
 			g_label.text = text
 
-# ===================================================================
-# === HEALTH UI SCRIPT (HealthUI.gd) ===
-# (Attach to hearts container in top corner)
-# ===================================================================
 
+# HEALTH UI SCRIPT
 extends Control
 
-@onready var heart1 = $HBoxContainer/Heart1
-@onready var heart2 = $HBoxContainer/Heart2
-@onready var heart3 = $HBoxContainer/Heart3
+@onready var heart1: Sprite2D = $HBoxContainer/Sprite2D
+@onready var heart2: Sprite2D = $HBoxContainer/Sprite2D2
+@onready var heart3: Sprite2D = $HBoxContainer/Sprite2D3
 
 var hearts = []
 
 func _ready():
 	hearts = [heart1, heart2, heart3]
 	
-	# Connect to game manager
-	var game_manager = get_node("/root/Main")  # Adjust path
+	# Try multiple possible paths to find game manager
+	var game_manager = null
+	
+	var possible_paths = [
+		"/root/Game",
+		"../../", 
+		"../../../",
+		get_tree().current_scene
+	]
+	
+	for path in possible_paths:
+		var node = get_node_or_null(path)
+		if node and node.has_signal("health_changed"):
+			game_manager = node
+			print("Found game manager at: ", path)
+			break
+	
 	if game_manager:
 		game_manager.health_changed.connect(_on_health_changed)
+		print("Health UI connected successfully!")
+	else:
+		print("ERROR: Could not find game manager for health!")
 
 func _on_health_changed(new_health: int):
 	print("Hearts remaining: ", new_health)
@@ -401,3 +538,84 @@ func _on_health_changed(new_health: int):
 	# Show/hide hearts
 	for i in range(hearts.size()):
 		hearts[i].visible = (i < new_health)
+
+# BANNED ITEM SCRIPT
+# Attach this to each banned item scene (bannedflask1.tscn, bannedcomputer.tscn, etc.)
+
+extends Area2D
+
+@export var flask_type: String = "bannedflask1"  # Set in Inspector for each scene
+signal flask_touched(type: String)
+
+func _ready():
+	print("Banned item ", flask_type, " ready at position: ", global_position)
+	add_to_group("banned_items")
+	
+	# Visual indicator - red tint
+	modulate = Color(1, 0.7, 0.7)  # Light red tint
+	
+	# Connect collision detection
+	body_entered.connect(_on_body_entered)
+	
+	# Also add mouse click detection as backup
+	input_event.connect(_on_input_event)
+	
+	# Make sure monitoring is enabled
+	monitoring = true
+	monitorable = true
+
+func _on_body_entered(body):
+	print("Something entered banned item ", flask_type, ": ", body.name)
+	if body.is_in_group("player"):
+		print("PLAYER HIT BANNED ITEM: ", flask_type)
+		flask_touched.emit(flask_type)
+	else:
+		print("Non-player entered banned item: ", body.name)
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			print("MOUSE CLICKED BANNED ITEM: ", flask_type)
+			flask_touched.emit(flask_type)
+
+#ZOMBIE
+extends CharacterBody2D
+
+@export var speed: float = 100
+@export var change_interval: float = 2.0
+
+var direction: Vector2 = Vector2.RIGHT
+var timer: float = 0.0
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready():
+	pick_new_direction()
+	timer = change_interval
+
+func _physics_process(delta):
+	timer -= delta
+	if timer <= 0:
+		pick_new_direction()
+		timer = change_interval
+
+	velocity = direction * speed
+	move_and_slide()
+
+	# Agar collision hua, direction change kar do
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider and not collider.is_in_group("player"):
+			pick_new_direction()
+			timer = change_interval
+			break
+
+func pick_new_direction():
+	var choices = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
+	direction = choices[randi() % choices.size()]
+
+func _on_AttackArea_body_entered(body):
+	if body.is_in_group("player"):
+		anim.play("attack")
+		$AttackArea/AudioStreamPlayer2D.play()  # <-- if you added an AudioStreamPlayer2D node

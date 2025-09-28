@@ -1,3 +1,4 @@
+# INVENTORY UI SCRIPT
 extends Control
 
 @onready var f_label: Label = $VBoxContainer/Sprite2D2
@@ -5,10 +6,29 @@ extends Control
 @onready var g_label: Label = $VBoxContainer/Sprite2D3
 
 func _ready():
-	# Connect to game manager
-	var game_manager = get_node("/root/Main")  # Adjust path
+	# Try multiple possible paths to find game manager
+	var game_manager = null
+	
+	# Try different possible paths
+	var possible_paths = [
+		"/root/Game",        # If scene is named Game
+		"../../",            # If UI is child of Game
+		"../../../",         # If UI is nested deeper
+		get_tree().current_scene  # Current scene
+	]
+	
+	for path in possible_paths:
+		var node = get_node_or_null(path)
+		if node and node.has_signal("inventory_changed"):
+			game_manager = node
+			print("Found game manager at: ", path)
+			break
+	
 	if game_manager:
 		game_manager.inventory_changed.connect(_on_inventory_changed)
+		print("Inventory UI connected successfully!")
+	else:
+		print("ERROR: Could not find game manager!")
 	
 	# Initialize labels
 	update_display("C", 0)
