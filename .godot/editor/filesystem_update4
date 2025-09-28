@@ -1,3 +1,6 @@
-res://scenes/game.tscn
-res://scenes/blueflask.tscn
+res://scripts/bannedscript.gd
+res://scripts/audio_player.gd
+res://scenes/audio_player.tscn
 res://scripts/game.gd
+res://scripts/start scene.gd
+res://scenes/rules_page.tscn

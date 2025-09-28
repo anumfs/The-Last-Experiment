@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://b7k3mnl8whhi5"]
 
 [ext_resource type="Script" uid="uid://dq7y82luke3a6" path="res://scripts/rules.gd" id="1_n2emh"]
-[ext_resource type="Texture2D" uid="uid://bod50vvmo0dcb" path="res://Rules.png" id="2_wcdk0"]
+[ext_resource type="Texture2D" uid="uid://b380eblxjvpns" path="res://assets/backgrounds/rules page.jpg" id="2_6jt76"]
 [ext_resource type="FontFile" uid="uid://yqlctr5f6rhk" path="res://assets/fonts/PixelOperator8.ttf" id="3_4hfty"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jt76"]
-texture = ExtResource("2_wcdk0")
+texture = ExtResource("2_6jt76")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2mxm"]
 bg_color = Color(1, 1, 1, 1)
@@ -82,5 +82,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4m0l4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0xtlj")
 text = "Back "
 
-[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]
