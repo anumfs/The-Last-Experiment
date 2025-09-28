@@ -5,6 +5,7 @@ extends Control
 @onready var rules_button: Button = $VBoxContainer/Button2
 
 func _ready():
+	AudioPlayer.play_music_level()
 	start_button.pressed.connect(_on_start_pressed)
 	rules_button.pressed.connect(_on_rules_pressed)
 

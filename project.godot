@@ -15,6 +15,10 @@ run/main_scene="uid://cx1llqi24uofy"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioPlayer="*res://scenes/audio_player.tscn"
+
 [input]
 
 "Move Up"={
