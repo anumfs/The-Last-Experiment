@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccl2m4axotjy6"]
+
+[ext_resource type="Script" uid="uid://bo417qibfkj25" path="res://scripts/flask.gd" id="1_uo4d8"]
+[ext_resource type="Texture2D" uid="uid://u6be3i7wh6xd" path="res://assets/objects/Flasks 32x32.png" id="2_jhtst"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhtst"]
+radius = 13.0
+height = 50.0
+
+[node name="D" type="Area2D"]
+script = ExtResource("1_uo4d8")
+flask_type = "D"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_jhtst")
+region_enabled = true
+region_rect = Rect2(2.8729439, 0.37446404, 26.550755, 31.991488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jhtst")

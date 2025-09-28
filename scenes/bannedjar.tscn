@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5f85os76g7ut"]
+
+[ext_resource type="Script" uid="uid://dk5uuulgre6ml" path="res://scripts/bannedscript.gd" id="1_6cneg"]
+[ext_resource type="Texture2D" uid="uid://34lh7eynqhmh" path="res://assets/banned/jar.png" id="2_34q5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34q5x"]
+radius = 49.0
+height = 112.0
+
+[node name="CharacterBody2D" type="Area2D"]
+script = ExtResource("1_6cneg")
+flask_type = "bannedjar"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_34q5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_34q5x")
