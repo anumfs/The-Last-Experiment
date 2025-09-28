@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj84a4gknbwdc"]
+
+[ext_resource type="Script" uid="uid://jfwolcek8pa2" path="res://game_over.gd" id="1_ccer4"]
+[ext_resource type="Texture2D" uid="uid://dvo2op8w1p7i8" path="res://yay.jpg" id="1_yxx3c"]
+[ext_resource type="FontFile" uid="uid://bi3aeohmv0n3k" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ccer4"]
+[ext_resource type="FontFile" uid="uid://cdeuwmm8eobsj" path="res://assets/fonts/PixelOperator8.ttf" id="3_8u835"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8u835"]
+texture = ExtResource("1_yxx3c")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxx3c"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccer4"]
+bg_color = Color(0.48439813, 0.4843982, 0.48439813, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u835"]
+bg_color = Color(0.7441813, 0.7441813, 0.7441813, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u835"]
+
+[node name="Game over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccer4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8u835")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.5
+offset_top = 19.0
+offset_right = 65.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8u835")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxx3c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ccer4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8u835")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8u835")
+text = "Restart"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.5
+offset_top = -67.0
+offset_right = 427.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_ccer4")
+theme_override_font_sizes/font_size = 32
+text = "You've turned into a zombie :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_restart_pressed"]
