@@ -107,24 +107,6 @@ position = Vector2(40.00017, 10.250038)
 scale = Vector2(2.8281252, 1.6805393)
 texture = ExtResource("2_264po")
 
-[node name="zombie" parent="." instance=ExtResource("4_lbhrr")]
-z_index = 1
-position = Vector2(723.00006, -215)
-collision_mask = 2
-script = null
-
-[node name="zombie2" parent="." instance=ExtResource("4_lbhrr")]
-z_index = 1
-position = Vector2(-753, 122.000015)
-collision_mask = 2
-script = null
-
-[node name="zombie3" parent="." instance=ExtResource("4_lbhrr")]
-z_index = 1
-position = Vector2(1077, 401.99994)
-collision_mask = 2
-script = null
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 2)
 collision_layer = 2
@@ -341,3 +323,18 @@ offset_left = -154.0
 offset_top = 39.0
 offset_right = -154.0
 offset_bottom = 39.0
+
+[node name="zombie" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(-754, 237)
+collision_layer = 8
+collision_mask = 2
+
+[node name="zombie2" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(317, -247)
+collision_layer = 8
+collision_mask = 2
+
+[node name="zombie3" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(917, 57)
+collision_layer = 8
+collision_mask = 2

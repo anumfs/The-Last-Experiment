@@ -1,53 +1,43 @@
-[gd_scene load_steps=15 format=3 uid="uid://bm2k1fqrfnhmr"]
+[gd_scene load_steps=16 format=3 uid="uid://bm2k1fqrfnhmr"]
 
 [ext_resource type="Script" path="res://scripts/zombie.gd" id="1_4gx57"]
-[ext_resource type="Texture2D" uid="uid://bcye2osbs5e6f" path="res://assets/sprites/enemies/chonker_attack.png" id="2_xepks"]
+[ext_resource type="Texture2D" uid="uid://nd1t6ores4nj" path="res://assets/sprites/enemies/zombie_attack.png" id="1_xepks"]
+[ext_resource type="Texture2D" uid="uid://dx8l3dtgfvl5c" path="res://assets/sprites/enemies/zombie_run.png" id="2_4gx57"]
 [ext_resource type="PackedScene" uid="uid://bk6qhv3lvkbxa" path="res://scenes/killzone.tscn" id="3_ycv6i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjjxt"]
 radius = 4.57366
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjjxt"]
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7pfmu"]
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aetfh"]
-region = Rect2(96, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gx57"]
-atlas = ExtResource("2_xepks")
+atlas = ExtResource("1_xepks")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ycv6i"]
-atlas = ExtResource("2_xepks")
+atlas = ExtResource("1_xepks")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjjxt"]
+atlas = ExtResource("1_xepks")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pfmu"]
+atlas = ExtResource("2_4gx57")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fthk"]
-atlas = ExtResource("2_xepks")
+atlas = ExtResource("2_4gx57")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aetfh"]
+atlas = ExtResource("2_4gx57")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjlcg"]
-atlas = ExtResource("2_xepks")
+atlas = ExtResource("2_4gx57")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eskk2"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pjjxt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7pfmu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aetfh")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4gx57")
@@ -56,7 +46,21 @@ animations = [{
 "texture": SubResource("AtlasTexture_ycv6i")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pjjxt")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pfmu")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3fthk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aetfh")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jjlcg")

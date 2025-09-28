@@ -19,6 +19,8 @@ func _ready():
 	# Make sure monitoring is enabled
 	monitoring = true
 	monitorable = true
+	
+	print("Flask ", flask_type, " is ready and clickable!")
 
 func _on_body_entered(body):
 	print("Something entered flask ", flask_type, ": ", body.name)
@@ -29,7 +31,14 @@ func _on_body_entered(body):
 		print("Non-player entered flask: ", body.name, " - Groups: ", body.get_groups())
 
 func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			print("MOUSE CLICKED FLASK: ", flask_type)
-			flask_touched.emit(flask_type)
+	if event is InputEventMouseButton and event.pressed:
+		print("CLICKED FLASK: ", flask_type)
+		flask_touched.emit(flask_type)
+			
+
+		
+func _input_event(viewport, event, shape_idx):
+	# Backup method
+	if event is InputEventMouseButton and event.pressed:
+		print("BACKUP CLICK - FLASK: ", flask_type)
+		flask_touched.emit(flask_type)
